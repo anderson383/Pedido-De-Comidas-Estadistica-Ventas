@@ -35,7 +35,7 @@ class ProductoModels
         return $respuesta;
     }
     public function consultarGrafica(){
-        $this->sentencia = "SELECT fechaProducto,COUNT(*) FROM productos WHERE fechaProducto <= now() GROUP BY fechaProducto ORDER BY fechaProducto ASC LIMIT 11";
+        $this->sentencia = "SELECT fechaProducto,COUNT(*) FROM productos WHERE fechaProducto <= now() GROUP BY fechaProducto ORDER BY fechaProducto DESC LIMIT 8";
         $this->stmt = $this->conex->prepare($this->sentencia);
         $this->stmt->execute();
         $datosEnteros = array();
